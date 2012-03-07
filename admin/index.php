@@ -88,7 +88,7 @@ Step 2: IF POST array has some varibles then, perform authentication.
         &nbsp;
       </div>
       <div class="page">
-              <form id="indexform" action="index.php" method="post">
+              <form id="indexform" action="admwelcome.php" method="post">
               <table cellpadding="30" cellspacing="10">
               <tr>
                   <td>Admin Name</td>

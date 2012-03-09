@@ -47,12 +47,11 @@ if (!isset($_SESSION['admname'])) {
     /*     * ************************ Step 2 - Case 1 ************************ */
     //Log out and redirect login page
     unset($_SESSION['admname']);
-    header('Location: index.php');
+		?><script>window.location = "index.php"</script><?php
 } else if (isset($_REQUEST['dashboard'])) {
     /*     * ************************ Step 2 - Case 2 ************************ */
     //redirect to dashboard
-
-    header('Location: admwelcome.php');
+		?><script>window.location = "admwelcome.php"</script><?php
 } else if (isset($_REQUEST['delete'])) {
     /*     * ************************ Step 2 - Case 3 ************************ */
     //deleting the selected test conductors
@@ -229,7 +228,7 @@ if ($_GLOBALS['message']) {
                         // To allow Editing Existing Test Conductor Information
                         $result = executeQuery("select tcid,tcname,DECODE(tcpassword,'oespass') as tcpass ,emailid,contactno,address,city,pincode from testconductor where tcname='" . htmlspecialchars($_REQUEST['edit'],ENT_QUOTES) . "';");
                         if (mysql_num_rows($result) == 0) {
-                            header('Location: tcmng.php');
+                        		?><script>window.location = "tcmng.php"</script><?php
                         } else if ($r = mysql_fetch_array($result)) {
 
                             //editing components

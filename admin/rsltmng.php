@@ -48,19 +48,19 @@ else if(isset($_REQUEST['logout'])) {
     /************************** Step 2 - Case 1 *************************/
     //Log out and redirect login page
         unset($_SESSION['admname']);
-        header('Location: index.php');
+				?><script>window.location = "index.php"</script><?php
 
     }
     else if(isset($_REQUEST['dashboard'])) {
     /************************** Step 2 - Case 2 *************************/
         //redirect to dashboard
-            header('Location: admwelcome.php');
+						?><script>window.location = "admwelcome.php"</script><?php
 
         }
         else if(isset($_REQUEST['back'])) {
     /************************** Step 2 - Case 3s *************************/
             //redirect to Result Management
-                header('Location: rsltmng.php');
+								?><script>window.location = "rsltmng.php"</script><?php
 
             }
 

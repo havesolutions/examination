@@ -47,12 +47,11 @@ if (!isset($_SESSION['admname']) || !isset($_SESSION['testqn'])) {
     /*     * ************************ Step 2 - Case 1 ************************ */
     //Log out and redirect login page
     unset($_SESSION['admname']);
-    header('Location: index.php');
+		?><script>window.location = "index.php"</script><?php
 } else if (isset($_REQUEST['managetests'])) {
     /*     * ************************ Step 2 - Case 2 ************************ */
     //redirect to Manage Tests Section
-
-    header('Location: testmng.php');
+		?><script>window.location = "testmng.php"</script><?php
 } else if (isset($_REQUEST['delete'])) {
     /*     * ************************ Step 2 - Case 3 ************************ */
     //deleting the selected Questions
@@ -302,7 +301,7 @@ if (isset($_SESSION['admname']) && isset($_SESSION['testqn'])) {
                                 // To allow Editing Existing Question.
                                 $result = executeQuery("select * from question where testid=" . $_SESSION['testqn'] . " and qnid=" . $_REQUEST['edit'] . ";");
                                 if (mysql_num_rows($result) == 0) {
-                                    header('Location: prepqn.php');
+                                		?><script>window.location = "prepqn.php"</script><?php
                                 } else if ($r = mysql_fetch_array($result)) {
 
 

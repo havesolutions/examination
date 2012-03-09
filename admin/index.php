@@ -1,6 +1,4 @@
-
-
- <?php
+<?php
 
 /*
 ***************************************************
@@ -44,7 +42,9 @@ Step 2: IF POST array has some varibles then, perform authentication.
               {
                   $_SESSION['admname']=htmlspecialchars_decode($r['admname'],ENT_QUOTES);
                   unset($_GLOBALS['message']);
-                  header('Location: http://examination.standingcoin.com/admin/admwelcome.php');
+                  ?> 
+										<script>window.location = "admwelcome.php"</script>
+									<?php
               }else
           {
              $_GLOBALS['message']="Check Your user name and Password.";
@@ -96,7 +96,7 @@ Step 2: IF POST array has some varibles then, perform authentication.
 
               </tr>
               <tr>
-                  <td> Password</td>
+                  <td>Password</td>
                   <td><input type="password" name="password" value="" size="16" /></td>
               </tr>
 

@@ -119,7 +119,6 @@ else if(isset($_REQUEST['dashboard'])){
                         $result=executeQuery("select tcid,tcname,DECODE(tcpassword,'oespass') as tcpass ,emailid,contactno,address,city,pincode from testconductor where tcname='".$_SESSION['tcname']."';");
                         if(mysql_num_rows($result)==0) {
                         	?><script>window.location = "tcwelcome.php"</script><?php
-                           header('Location: tcwelcome.php');
                         }
                         else if($r=mysql_fetch_array($result))
                         {

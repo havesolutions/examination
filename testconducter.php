@@ -24,13 +24,13 @@ else if(isset($_REQUEST['logout']))
 {
     //Log out and redirect login page
        unset($_SESSION['stdname']);
-       header('Location: index.php');
+			?><script>window.location = "index.php"</script><?php
 
 }
 else if(isset($_REQUEST['dashboard'])){
     //redirect to dashboard
     //
-     header('Location: stdwelcome.php');
+		?><script>window.location = "stdwelcome.php"</script><?php
 
     }else if(isset($_REQUEST['next']) || isset($_REQUEST['summary']) || isset($_REQUEST['viewsummary']))
     {
@@ -69,12 +69,12 @@ else if(isset($_REQUEST['dashboard'])){
             }
             if(isset($_REQUEST['viewsummary']))
             {
-                 header('Location: summary.php');
+								?><script>window.location = "summary.php"</script><?php
             }
             if(isset($_REQUEST['summary']))
              {
                      //summary page
-                     header('Location: summary.php');
+										?><script>window.location = "summary.php"</script><?php
              }
         }
         if((int)$_SESSION['qn']<(int)$_SESSION['tqn'])
@@ -134,7 +134,7 @@ else if(isset($_REQUEST['dashboard'])){
     else if(isset($_REQUEST['fs']))
     {
         //Final Submission
-        header('Location: testack.php');
+				?><script>window.location = "testack.php"</script><?php
     }
 ?>
 <?php

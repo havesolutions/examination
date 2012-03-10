@@ -49,13 +49,13 @@ else if(isset($_REQUEST['logout']))
     /************************** Step 2 - Case 1 *************************/
     //Log out and redirect login page
     unset($_SESSION['tcname']);
-    header('Location: index.php');
+		?><script>window.location = "index.php"</script><?php
 
 }
 else if(isset($_REQUEST['dashboard'])){
      /************************** Step 2 - Case 2 *************************/
         //redirect to dashboard
-     header('Location: tcwelcome.php');
+		?><script>window.location = "tcwelcome.php"</script><?php
 
     }else if(isset($_REQUEST['savem']))
 {
@@ -118,6 +118,7 @@ else if(isset($_REQUEST['dashboard'])){
         // Default Mode - Displays the saved information.
                         $result=executeQuery("select tcid,tcname,DECODE(tcpassword,'oespass') as tcpass ,emailid,contactno,address,city,pincode from testconductor where tcname='".$_SESSION['tcname']."';");
                         if(mysql_num_rows($result)==0) {
+                        	?><script>window.location = "tcwelcome.php"</script><?php
                            header('Location: tcwelcome.php');
                         }
                         else if($r=mysql_fetch_array($result))

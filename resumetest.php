@@ -23,12 +23,12 @@ if(!isset($_SESSION['stdname'])) {
 else if(isset($_REQUEST['logout'])) {
     //Log out and redirect login page
         unset($_SESSION['stdname']);
-        header('Location: index.php');
+				?><script>window.location = "index.php"</script><?php
 
     }
     else if(isset($_REQUEST['dashboard'])) {
         //redirect to dashboard
-            header('Location: stdwelcome.php');
+					?><script>window.location = "stdwelcome.php"</script><?php
 
         }
         else if(isset($_REQUEST['resume'])) {
@@ -60,7 +60,7 @@ else if(isset($_REQUEST['logout'])) {
                                 $_SESSION['starttime']=$r['startt'];
                                 $_SESSION['endtime']=$r['endt'];
                                 $_SESSION['qn']=1;
-                                header('Location: testconducter.php');
+																?><script>window.location = "testconducter.php"</script><?php
                             }
 
                         }

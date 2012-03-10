@@ -49,13 +49,13 @@ else if(isset($_REQUEST['logout']))
     /************************** Step 2 - Case 1 *************************/
     //Log out and redirect login page
     unset($_SESSION['stdname']);
-    header('Location: index.php');
+		?><script>window.location = "index.php"</script><?php
 
 }
 else if(isset($_REQUEST['dashboard'])){
      /************************** Step 2 - Case 2 *************************/
         //redirect to dashboard
-     header('Location: stdwelcome.php');
+			?><script>window.location = "stdwelcome.php"</script><?php
 
     }else if(isset($_REQUEST['savem']))
 {
@@ -118,7 +118,7 @@ else if(isset($_REQUEST['dashboard'])){
         // Default Mode - Displays the saved information.
                         $result=executeQuery("select stdid,stdname,DECODE(stdpassword,'oespass') as stdpass ,emailid,contactno,address,city,pincode from student where stdname='".$_SESSION['stdname']."';");
                         if(mysql_num_rows($result)==0) {
-                           header('Location: stdwelcome.php');
+                        	 ?><script>window.location = "stdwelcome.php"</script><?php
                         }
                         else if($r=mysql_fetch_array($result))
                         {

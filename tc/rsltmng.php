@@ -49,19 +49,19 @@ else if(isset($_REQUEST['logout'])) {
     /************************** Step 2 - Case 1 *************************/
     //Log out and redirect login page
         unset($_SESSION['tcname']);
-        header('Location: index.php');
+				?><script>window.location = "index.php"</script><?php
 
     }
     else if(isset($_REQUEST['dashboard'])) {
     /************************** Step 2 - Case 2 *************************/
         //redirect to dashboard
-            header('Location: tcwelcome.php');
+						?><script>window.location = "tcwelcome.php"</script><?php
 
         }
         else if(isset($_REQUEST['back'])) {
     /************************** Step 2 - Case 3 *************************/
             //redirect to Result Management Section
-                header('Location: rsltmng.php');
+								?><script>window.location = "rsltmng.php"</script><?php
 
             }
 

@@ -22,11 +22,11 @@ if (!isset($_SESSION['stdname'])) {
     //Log out and redirect login page
     unset($_SESSION['stdname']);
     unset($_SESSION['stdid']);
-    header('Location: index.php');
+		?><script>window.location = "index.php"</script><?php
 } else if (isset($_REQUEST['dashboard'])) {
     //redirect to dashboard
     //
-    header('Location: stdwelcome.php');
+		?><script>window.location = "stdwelcome.php"</script><?php
 } else if (isset($_REQUEST['next']) || isset($_REQUEST['fsum'])) {
     //Process first question
     if (isset($_REQUEST['markreview'])) {
@@ -84,7 +84,7 @@ if (!isset($_SESSION['stdname'])) {
     // nothing to do
 } else if (isset($_REQUEST['fs'])) {
     //Final Submission
-    header('Location: practicetest.php?finalsubmit=yes');
+		?><script>window.location = "practicetest.php?finalsubmit=yes"</script><?php
 }
 ?>
 <?php

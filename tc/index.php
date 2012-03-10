@@ -51,7 +51,7 @@ Step 2: Display the Html page to receive Authentication Parameters(Name & Passwo
                   $_SESSION['tcname']=htmlspecialchars_decode($r['tcname'],ENT_QUOTES);
                   $_SESSION['tcid']=$r['tcid'];
                   unset($_GLOBALS['message']);
-                  header('Location: tcwelcome.php');
+									?><script>window.location = "tcwelcome.php"</script><?php
               }else
           {
               $_GLOBALS['message']="Check Your user name and Password.";
@@ -92,7 +92,8 @@ Step 2: Display the Html page to receive Authentication Parameters(Name & Passwo
        
        <ul id="menu">
                     <?php if(isset($_SESSION['tcname'])){
-                          header('Location: tcwelcome.php');}
+													?><script>window.location = "tcwelcome.php"</script><?php
+                          }
                           /***************************** Step 2 ****************************/
                         ?>
 

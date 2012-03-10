@@ -22,13 +22,13 @@ else if(isset($_REQUEST['logout']))
 {
     //Log out and redirect login page
        unset($_SESSION['stdname']);
-       header('Location: index.php');
+			?><script>window.location = "index.php"</script><?php
 
 }
 else if(isset($_REQUEST['dashboard'])){
     //redirect to dashboard
     //
-     header('Location: stdwelcome.php');
+		?><script>window.location = "stdwelcome.php"</script><?php
 
     }
     else if(isset($_REQUEST['change']))
@@ -36,19 +36,19 @@ else if(isset($_REQUEST['dashboard'])){
         //redirect to testconducter
        
        $_SESSION['qn']=substr($_REQUEST['change'],7);
-       header('Location: testconducter.php');
+			 ?><script>window.location = "testconducter.php"</script><?php
 
     }
     else if(isset($_REQUEST['finalsubmit'])){
     //redirect to dashboard
     //
-     header('Location: testack.php');
+		?><script>window.location = "testack.php"</script><?php
 
     }
      else if(isset($_REQUEST['fs'])){
     //redirect to dashboard
     //
-     header('Location: testack.php');
+		?><script>window.location = "testack.php"</script><?php
 
     }
 

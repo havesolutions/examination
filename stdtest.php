@@ -18,15 +18,15 @@ include_once 'oesdb.php';
 if (!isset($_SESSION['stdname'])) {
     $_GLOBALS['message'] = "Session Timeout.Click here to <a href=\"index.php\">Re-LogIn</a>";
 } else if (isset($_SESSION['starttime'])) {
-    header('Location: testconducter.php');
+		?><script>window.location = "testconducter.php"</script><?php
 } else if (isset($_REQUEST['logout'])) {
     //Log out and redirect login page
     unset($_SESSION['stdname']);
-    header('Location: index.php');
+		?><script>window.location = "index.php"</script><?php
 } else if (isset($_REQUEST['dashboard'])) {
     //redirect to dashboard
     //
-    header('Location: stdwelcome.php');
+		?><script>window.location = "stdwelcome.php"</script><?php
 } else if (isset($_REQUEST['starttest'])) {
     //Prepare the parameters needed for Test Conducter and redirect to test conducter
     if (!empty($_REQUEST['tc'])) {
@@ -73,7 +73,7 @@ DO update studenttest set correctlyanswered=(select count(*) from studentquestio
                             $_SESSION['starttime'] = $r['startt'];
                             $_SESSION['endtime'] = $r['endt'];
                             $_SESSION['qn'] = 1;
-                            header('Location: testconducter.php');
+														?><script>window.location = "testconducter.php"</script><?php
                         }
                     }
                 }

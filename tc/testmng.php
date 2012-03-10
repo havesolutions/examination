@@ -48,11 +48,11 @@ if (!isset($_SESSION['tcname'])) {
     /*     * ************************ Step 2 - Case 1 ************************ */
     //Log out and redirect login page
     unset($_SESSION['tcname']);
-    header('Location: index.php');
+		?><script>window.location = "index.php"</script><?php
 } else if (isset($_REQUEST['dashboard'])) {
     /*     * ************************ Step 2 - Case 2 ************************ */
     //redirect to dashboard
-    header('Location: tcwelcome.php');
+		?><script>window.location = "tcwelcome.php"</script><?php
 } else if (isset($_REQUEST['delete'])) { /* * ************************ Step 2 - Case 3 ************************ */
     //deleting the selected Tests
     unset($_REQUEST['delete']);
@@ -144,7 +144,7 @@ else if (isset($_REQUEST['manageqn'])) {
         $_SESSION['testname'] = $testname;
         $_SESSION['testqn'] = $r['testid'];
         //  $_GLOBALS['message']=$_SESSION['testname'];
-        header('Location: prepqn.php');
+				?><script>window.location = "prepqn.php"</script><?php
     }
 }
 ?>
@@ -289,7 +289,7 @@ if (isset($_SESSION['tcname'])) {
         // To allow Editing Existing Test.
         $result = executeQuery("select t.totalquestions,t.duration,t.testid,t.testname,t.testdesc,t.subid,s.subname,DECODE(t.testcode,'oespass') as tcode,DATE_FORMAT(t.testfrom,'%Y-%m-%d') as testfrom,DATE_FORMAT(t.testto,'%Y-%m-%d') as testto from test as t,subject as s where t.subid=s.subid and t.testname='" . htmlspecialchars($_REQUEST['edit'], ENT_QUOTES) . "' and t.tcid=" . $_SESSION['tcid'] . ";");
         if (mysql_num_rows($result) == 0) {
-            header('Location: testmng.php');
+        		?><script>window.location = "testmng.php"</script><?php
         } else if ($r = mysql_fetch_array($result)) {
 
 

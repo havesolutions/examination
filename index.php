@@ -40,7 +40,7 @@ Step 2: Display the Html page to receive Authentication Parameters(Name & Passwo
  //redirect to registration page
       if(isset($_REQUEST['register']))
       {
-            header('Location: register.php');
+						?><script>window.location = "register.php"</script><?php
       }
       else if($_REQUEST['stdsubmit'])
       {
@@ -56,7 +56,7 @@ Step 2: Display the Html page to receive Authentication Parameters(Name & Passwo
                   $_SESSION['stdname']=htmlspecialchars_decode($r['stdname'],ENT_QUOTES);
                   $_SESSION['stdid']=$r['stdid'];
                   unset($_GLOBALS['message']);
-                  header('Location: stdwelcome.php');
+									?><script>window.location = "stdwelcome.php"</script><?php
               }else
           {
               $_GLOBALS['message']="Check Your user name and Password.";
@@ -97,7 +97,8 @@ Step 2: Display the Html page to receive Authentication Parameters(Name & Passwo
        
        <ul id="menu">
                     <?php if(isset($_SESSION['stdname'])){
-                          header('Location: stdwelcome.php');}else{  
+													?><script>window.location = "stdwelcome.php"</script><?php
+                          }else{  
                           /***************************** Step 2 ****************************/
                         ?>
 

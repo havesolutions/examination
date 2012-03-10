@@ -20,7 +20,7 @@ session_start();
         else if(isset($_REQUEST['logout'])){
                 unset($_SESSION['stdname']);
             $_GLOBALS['message']="You are Loggged Out Successfully.";
-            header('Location: index.php');
+						?><script>window.location = "index.php"</script><?php
         }
 ?>
 <html>

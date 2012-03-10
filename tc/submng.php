@@ -47,11 +47,11 @@ if (!isset($_SESSION['tcname'])) {
     /*     * ************************ Step 2 - Case 1 ************************ */
     //Log out and redirect login page
     unset($_SESSION['tcname']);
-    header('Location: index.php');
+		?><script>window.location = "index.php"</script><?php
 } else if (isset($_REQUEST['dashboard'])) {
     /*     * ************************ Step 2 - Case 2 ************************ */
     //redirect to dashboard
-    header('Location: tcwelcome.php');
+		?><script>window.location = "tcwelcome.php"</script><?php
 } else if (isset($_REQUEST['delete'])) {
     /*     * ************************ Step 2 - Case 3 ************************ */
     //deleting the selected Subjects
@@ -200,6 +200,7 @@ if (isset($_SESSION['tcname'])) {
         // To allow Editing Existing Subject.
         $result = executeQuery("select subid,subname,subdesc from subject where subname='" . htmlspecialchars($_REQUEST['edit'], ENT_QUOTES) . "' and tcid=" . $_SESSION['tcid'] . ";");
         if (mysql_num_rows($result) == 0) {
+        		
             header('submng.php');
         } else if ($r = mysql_fetch_array($result)) {
 
